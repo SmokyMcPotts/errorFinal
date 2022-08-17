@@ -53,7 +53,7 @@ const WINNER = [`${uName ? 'You win' : 'Bob wins'}.`, `Draw`, `${uName ? 'Alice 
 
 //'wager' or 'acceptWager' depending on who
 if (uName) {
-    const bet = await ask.ask(`How much would you like to wager?`, (x) => stdlib.parseCurrency);
+    const bet = await ask.ask(`How much would you like to wager?`, (x) => stdlib.parseCurrency(x));
     //should send in atomic units
     interact.wager = bet;
     //no option to set timeout yet
